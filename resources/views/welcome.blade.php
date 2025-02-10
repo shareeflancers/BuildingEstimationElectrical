@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Building Estimation Electrical</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
         <style>
             :root {
                 --primary-color: #0f172a;
@@ -14,6 +15,7 @@
                 --text-color: #334155;
                 --background-light: #f8fafc;
                 --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                --top-nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
                 --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
@@ -42,29 +44,19 @@
                 padding: 0.5rem 1rem !important;
                 transition: var(--transition);
             }
-
+            
             .nav-link:hover {
                 color: var(--secondary-color) !important;
             }
 
             /* Modern Hero Section */
             .hero-section {
-                min-height: 100vh;
+                min-height: 90vh;
                 background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(59, 130, 246, 0.8));
                 display: flex;
                 align-items: center;
                 position: relative;
                 overflow: hidden;
-            }
-
-            .hero-section::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: url('/api/placeholder/1920/1080') center/cover;
-                opacity: 0.1;
-                z-index: -1;
             }
 
             .hero-title {
@@ -181,6 +173,61 @@
                 transform: translateX(5px);
             }
 
+            .top-nav {
+                background: var(--secondary-color);
+                padding: 0.5rem 0;
+                color: white;
+                transition: var(--transition);
+                overflow: hidden;
+            }
+
+            .top-nav.hidden {
+                height: 0;
+                padding: 0;
+            }
+
+            .top-contact {
+                display: flex;
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .top-social {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .top-social a {
+                color: white;
+                opacity: 0.8;
+                transition: var(--transition);
+            }
+
+            .top-social a:hover {
+                opacity: 1;
+            }
+
+            /* Main Nav Styles */
+            .nav-wrapper {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .navbar {
+                background: rgba(255, 255, 255, 0.9) !important;
+                backdrop-filter: blur(10px);
+                box-shadow: var(--  top-nav-shadow);
+                transition: var(--transition);
+            }
+
+            /* Add space below navigation for demo */
+            .main-content {
+                margin-top: 140px;
+                padding: 20px;
+            }
+
             /* Animations */
             @keyframes fadeUp {
                 from {
@@ -212,46 +259,74 @@
                 .hero-title {
                     font-size: 2.5rem;
                 }
-
                 .service-card {
                     padding: 1.5rem;
+                }
+                .top-contact {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                
+                .top-social {
+                    display: none;
                 }
             }
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Building Estimation</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Estimates">Sample Estimates</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Privacy">Privacy Policy</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="btn btn-primary ms-3" href="#quote">Get Quote</a></li>
-                    </ul>
+        <div class="nav-wrapper">
+            <div class="top-nav">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="top-contact">
+                            <span><i class="bi bi-envelope me-2"></i>info@example.com</span>
+                            <span><i class="bi bi-telephone me-2"></i>(555) 123-4567</span>
+                            <span><i class="bi bi-geo-alt me-2"></i>123 Business St</span>
+                        </div>
+                        <div class="top-social">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+
+            <!-- Main Nav -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Building Estimation</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#Estimates">Sample Estimates</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#Privacy">Privacy Policy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            <li class="nav-item"><a class="btn btn-primary ms-3" href="#quote">Get Quote</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="row align-items-center min-vh-100">
                     <div class="col-lg-8 text-center text-lg-start">
-                        <h1 class="hero-title animate-fade-up">Transform Your Electrical Projects</h1>
-                        <p class="lead text-white-50 mb-5 animate-fade-up">Professional estimating services for modern electrical contractors</p>
+                        <h1 class="hero-title animate-fade-up">Estimating Services</h1>
+                        <p class="lead text-white-50 mb-5 animate-fade-up">Premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry.</p>
                         <div class="animate-fade-up">
-                            <a href="#contact" class="btn btn-primary me-3">Get Started</a>
-                            <a href="#services" class="btn btn-outline-light">Learn More</a>
+                            <a href="#contact" class="btn btn-primary me-3">Request a Quote</a>
+                            <a href="#services" class="btn btn-outline-light">Takeoff Service</a>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </section>
 
@@ -295,6 +370,36 @@
             </div>
         </section>
 
+        <section id="about-us" style="padding: 40px 0; background-color: #f7f7f7;">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="display-5 fw-bold mb-3">About Us</h2>
+                        <p class="lead text-muted">Get to know Building Estimation Electrical</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="Assets/Hero.jpeg" alt="International Estimating" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Who We Are</h3>
+                        <p>International Estimating is a premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry. We are dedicated to ensuring the success and efficiency of every project we undertake.</p>
+                        <h3>Our Mission</h3>
+                        <p>At International Estimating, our mission is to provide accurate and reliable cost estimates that help our clients achieve their project goals. We strive to deliver exceptional service and build long-lasting relationships based on trust and integrity.</p>
+                        <h3>Why Choose Us?</h3>
+                        <ul>
+                            <li>Over 20 years of industry experience</li>
+                            <li>Commitment to exceptional customer service</li>
+                            <li>Accurate and reliable cost estimates</li>
+                            <li>Tailored, cost-effective solutions</li>
+                            <li>Trusted partner in the industry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section py-6">
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -327,8 +432,8 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-4">
-                        <h3 class="h4 mb-4">BE Electrical</h3>
-                        <p class="text-white-50">Professional electrical estimating services for modern contractors.</p>
+                        <h3 class="h4 mb-4">Building Estimation Electrical</h3>
+                        <p class="text-white-50">A registered cost estimating company based in New York, we have been dedicated to delivering exceptional customer service and providing accurate cost solutions for over 20 years. Our commitment to excellence has earned us a reputation for reliability and expertise.</p>
                         <div class="mt-4">
                             <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
@@ -339,10 +444,12 @@
                     <div class="col-lg-4">
                         <h3 class="h4 mb-4">Quick Links</h3>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#home" class="footer-link">Home</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">Services</a></li>
-                            <li class="mb-2"><a href="#portfolio" class="footer-link">Portfolio</a></li>
-                            <li class="mb-2"><a href="#contact" class="footer-link">Contact</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#home">Home</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#services">Services</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#Estimates">Sample Estimates</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#Privacy">Privacy Policy</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4">
@@ -360,4 +467,15 @@
             </div>
         </footer>
     </body>
-</html>
+    <script>
+        // Scroll behavior
+        window.addEventListener('scroll', function() {
+            const topNav = document.querySelector('.top-nav');
+            if (window.scrollY > 50) {
+                topNav.classList.add('hidden');
+            } else {
+                topNav.classList.remove('hidden');
+            }
+        });
+    </script>
+    </html>
