@@ -215,10 +215,31 @@
                 z-index: 1000;
             }
 
+            /* Form control styles for dark background */
+            .contact-section .form-control::placeholder {
+            color: rgb(255, 255, 255);
+            }
+
+            .contact-section .form-control:focus {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(255, 255, 255);
+            color: white;
+            box-shadow: none;
+            }
+
+            .contact-section .form-control {
+            padding: 0.8rem 1.2rem;
+            }
+
+            .backdrop-blur-sm {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            }
+
             .navbar {
                 background: rgba(255, 255, 255, 0.9) !important;
                 backdrop-filter: blur(10px);
-                box-shadow: var(--  top-nav-shadow);
+                box-shadow: var(--top-nav-shadow);
                 transition: var(--transition);
             }
 
@@ -226,6 +247,11 @@
             .main-content {
                 margin-top: 140px;
                 padding: 20px;
+            }
+
+            .backdrop-blur-sm {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
             }
 
             /* Animations */
@@ -304,9 +330,7 @@
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#Estimates">Sample Estimates</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#Privacy">Privacy Policy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>   
                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                             <li class="nav-item"><a class="btn btn-primary ms-3" href="#quote">Get Quote</a></li>
                         </ul>
@@ -323,29 +347,31 @@
                         <p class="lead text-white-50 mb-5 animate-fade-up">Premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry.</p>
                         <div class="animate-fade-up">
                             <a href="#contact" class="btn btn-primary me-3">Request a Quote</a>
-                            <a href="#services" class="btn btn-outline-light">Takeoff Service</a>
+                            <a href="#services" class="btn btn-outline-light">Range of Services</a>
                         </div>
                     </div>
                 </div>  
             </div>
         </section>
-
-        <section id="services" class="py-6">
+        
+        <!-- Services -->
+        <section id="services" clas s="py-5">
             <div class="container py-5">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-6 text-center">
-                        <h2 class="display-5 fw-bold mb-3">Our Services</h2>
-                        <p class="lead text-muted">Expertise you can trust for your electrical projects</p>
+                        <h2 class="display-5 fw-bold mb-3">Estimating Services</h2>
+                        <p class="lead text-muted">Quality cost estimates at affordable rates</p>
                     </div>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="service-card">
                             <div class="service-icon">
-                                <i class="bi bi-calculator fs-3"></i>
+                                <i class="bi bi-building-fill-gear fs-3"></i>
                             </div>
-                            <h3 class="h4 mb-3">Construction Estimating</h3>
-                            <p class="text-muted mb-0">Precise cost analysis and detailed estimates for projects of any scale.</p>
+                            <h3 class="h4 mb-3">MEP Estimating</h3>
+                            <p class="text-muted mb-0">Contractors are always looking for MEP estimating services. US Bid Estimating & Engineering provides affordable, accurate and cost-effective cost</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -354,74 +380,327 @@
                                 <i class="bi bi-tools fs-3"></i>
                             </div>
                             <h3 class="h4 mb-3">Material Takeoff</h3>
-                            <p class="text-muted mb-0">Accurate quantity calculations and material specifications.</p>
+                            <p class="text-muted mb-0">We have an experienced and efficient team of construction cost estimators to work on residential, commercial and Industrial construction project</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="service-card">
                             <div class="service-icon">
-                                <i class="bi bi-chat-square-text fs-3"></i>
+                                <i class="bi bi-calculator fs-3"></i>
                             </div>
-                            <h3 class="h4 mb-3">Bid Consultation</h3>
-                            <p class="text-muted mb-0">Strategic guidance throughout your bidding process.</p>
+                            <h3 class="h4 mb-3">Cost Estimation</h3>
+                            <p class="text-muted mb-0">We provide complete cost estimate of the project including labor, material and support services required to complete the project</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-building-fill fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Construction Estimate</h3>
+                            <p class="text-muted mb-0">Are you in search of a dependable platform for construction estimating services? Look no further than US BID Estimating – your one-stop solution for a range of estimation services</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-lightning-fill fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Electrical Estimate</h3>
+                            <p class="text-muted mb-0">The quality of our work reflects our experience, which we have gained in years. We deal with all kinds of electrical works at private, government and military sectors</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-wrench-adjustable fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Plumbing Estimate</h3>
+                            <p class="text-muted mb-0">Our experienced estimators in mechanical, electrical, plumbing & civil works use traditional & trade specific softwares like Planswift, Trimble Accubid and CAD to prepare take-off</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-fire fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Fire Suppression System</h3>
+                            <p class="text-muted mb-0">US Bid Estimating & Engineering provides accurate take-offs and estimation services. We have experienced estimators with hands-on field experience and estimation</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-gear-fill fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Mechanical and HVAC</h3>
+                            <p class="text-muted mb-0">Professional estimation & takeoff service providers having more than a decade of experience in Mechanical, Plumbing, Electrical, Civil, Oil & Gas Piping and WWT Plants</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-buildings-fill fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Civil Estimate</h3>
+                            <p class="text-muted mb-0">We are specialized in the Mechanical, Electrical & Plumbing (MEP) & Civil trades with professionals having extensive experience in execution and estimation</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Engineering Services</h2>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-gear-wide-connected fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Engineering Service</h3>
+                            <p class="text-muted mb-0">We offer FEED, Basic and Detailed Engineering services covering the complete range of Process, Piping, Static Equipment, Civil and Structure, Electrical and Instrumentation</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-file-earmark-check-fill fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">EPC Proposal Support</h3>
+                            <p class="text-muted mb-0">Review of ITB, verification of FEED, Project synopsis, extraction of scope of work, prepare queries for client</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="bi bi-calculator fs-3"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Procurement Service</h3>
+                            <p class="text-muted mb-0">Preparation of Tender documents / material requisitions, Technical evaluation of bids</p>
+                            <a href="#" class="btn btn-outline-dark mt-4">Request Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About-us -->
+        <section id="about-us" class="hero-section">
+            <div class="container py-5">
+                <!-- Header Section -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="display-5 fw-bold mb-3 text-white">About Us</h2>
+                        <p class="lead text-white opacity-90">Get to know Building Estimation Electrical</p>
+                    </div>
+                </div>  
+
+                <!-- Main Content Section -->
+                <div class="row">
+                    <!-- Who We Are Column -->
+                    <div class="col-lg-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20">
+                            <h3 class="mb-4 text-white">Who We Are</h3>
+                            <p class="text-white opacity-90">International Estimating is a premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Our Mission Column -->
+                    <div class="col-lg-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20">
+                            <h3 class="mb-4 text-white">Our Mission</h3>
+                            <p class="text-white opacity-90">At International Estimating, our mission is to provide accurate and reliable cost estimates that help our clients achieve their project goals. We strive to deliver exceptional service and build long-lasting relationships based on trust and integrity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Why Choose Us Column -->
+                    <div class="col-lg-4">
+                        <div class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20">
+                            <h3 class="mb-4 text-white">Why Choose Us?</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3 text-white opacity-90">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Over 20 years of industry experience
+                                </li>
+                                <li class="mb-3 text-white opacity-90">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Commitment to exceptional customer service
+                                </li>
+                                <li class="mb-3 text-white opacity-90">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Accurate and reliable cost estimates
+                                </li>
+                                <li class="mb-3 text-white opacity-90">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Tailored, cost-effective solutions
+                                </li>
+                                <li class="mb-3 text-white opacity-90">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Trusted partner in the industry
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about-us" style="padding: 40px 0; background-color: #f7f7f7;">
+        <!-- Portfolio -->
+        <section id="portfolio" class="py-5">
             <div class="container">
+                <!-- Header Section -->
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-6 text-center">
-                        <h2 class="display-5 fw-bold mb-3">About Us</h2>
-                        <p class="lead text-muted">Get to know Building Estimation Electrical</p>
+                        <h2 class="display-5 fw-bold mb-3">Our Portfolio</h2>
+                        <p class="lead text-muted">Explore our recent estimation projects</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="Assets/Hero.jpeg" alt="International Estimating" class="img-fluid">
+
+                <!-- Portfolio Items -->
+                <div class="row g-4">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="badge bg-primary me-2">Commercial</span>
+                                    <span class="text-muted">New York, NY</span>
+                                </div>
+                                <h4 class="card-title">Office Complex Estimation</h4>
+                                <p class="card-text">Complete electrical estimation for a 20-story office building including power distribution, lighting, and emergency systems.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $2.5M</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 3 months</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 200,000 sq ft</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <h3>Who We Are</h3>
-                        <p>International Estimating is a premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry. We are dedicated to ensuring the success and efficiency of every project we undertake.</p>
-                        <h3>Our Mission</h3>
-                        <p>At International Estimating, our mission is to provide accurate and reliable cost estimates that help our clients achieve their project goals. We strive to deliver exceptional service and build long-lasting relationships based on trust and integrity.</p>
-                        <h3>Why Choose Us?</h3>
-                        <ul>
-                            <li>Over 20 years of industry experience</li>
-                            <li>Commitment to exceptional customer service</li>
-                            <li>Accurate and reliable cost estimates</li>
-                            <li>Tailored, cost-effective solutions</li>
-                            <li>Trusted partner in the industry</li>
-                        </ul>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="badge bg-primary me-2">Residential</span>
+                                    <span class="text-muted">Brooklyn, NY</span>
+                                </div>
+                                <h4 class="card-title">Luxury Apartment Complex</h4>
+                                <p class="card-text">Detailed estimation for a luxury residential complex including smart home systems and renewable energy integration.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $1.8M</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 2 months</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 150,000 sq ft</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <span class="badge bg-primary me-2">Industrial</span>
+                                    <span class="text-muted">Queens, NY</span>
+                                </div>
+                                <h4 class="card-title">Manufacturing Facility</h4>
+                                <p class="card-text">Comprehensive electrical estimation for a manufacturing facility including heavy machinery power requirements and automation systems.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $3.2M</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 4 months</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 300,000 sq ft</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary px-4 py-2">Load More Projects</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section py-6">
+        <section id="contact" class="hero-section">
             <div class="container py-5">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="display-5 fw-bold text-white mb-3">Get In Touch</h2>
+                        <p class="lead text-white opacity-90">Let's discuss your project requirements</p>
+                    </div>
+                </div>
+
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="contact-form">
-                            <h2 class="display-6 text-center mb-4">Get In Touch</h2>
-                            <form>
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                        <div class="bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20 p-4 p-md-5">
+                            <div class="row g-4">
+                                <!-- Contact Info -->
+                                <div class="col-md-5">
+                                    <div class="mb-4">
+                                        <h4 class="text-white mb-3">Contact Information</h4>
+                                        <ul class="list-unstyled text-white opacity-90">
+                                            <li class="mb-3">
+                                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                                New York, NY 10001
+                                            </li>
+                                            <li class="mb-3">
+                                                <i class="bi bi-telephone-fill me-2"></i>
+                                                (555) 123-4567
+                                            </li>
+                                            <li class="mb-3">
+                                                <i class="bi bi-envelope-fill me-2"></i>
+                                                info@example.com
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" placeholder="Email Address">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                    
+                                    <div>
+                                        <h4 class="text-white mb-3">Business Hours</h4>
+                                        <ul class="list-unstyled text-white opacity-90">
+                                            <li class="mb-2">Monday - Friday: 9am - 5pm</li>
+                                            <li>Saturday - Sunday: Closed</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </form>
+
+                                <!-- Contact Form -->
+                                <div class="col-md-7">
+                                    <form>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" placeholder="Your Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" placeholder="Email Address">
+                                        </div>
+                                        <div class="mb-3">
+                                            <select class="form-select bg-white bg-opacity-10 border-white border-opacity-20 text-white">
+                                                <option selected class="text-dark">Select Service Type</option>
+                                                <option value="Estimation" class="text-dark">Estimation Service</option>
+                                                <option value="Engineering" class="text-dark">Engineering Service</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-4">
+                                            <textarea class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" rows="4" placeholder="Your Message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -469,7 +748,7 @@
     </body>
     <script>
         // Scroll behavior
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function() {dd
             const topNav = document.querySelector('.top-nav');
             if (window.scrollY > 50) {
                 topNav.classList.add('hidden');
