@@ -23,6 +23,16 @@
             color: var(--text-color);
             overflow-x: hidden;
             }
+            .alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1050;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
             .navbar {
             background: rgba(255, 255, 255, 0.9) !important;
             backdrop-filter: blur(10px);
@@ -286,6 +296,21 @@
         </style>
     </head>
     <body>
+        <!-- Error Showing -->
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <!-- Navigation -->
         <div class="nav-wrapper">
             <div class="top-nav">
@@ -683,22 +708,42 @@
 
                                 <!-- Contact Form -->
                                 <div class="col-md-7">
-                                    <form>
+                                    <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="mb-3">
-                                            <input type="text" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" placeholder="Your Name">
+                                            <input type="text" name="name" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('name') is-invalid @enderror" placeholder="Your Name" value="{{ old('name') }}">
+                                            @error('name')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" placeholder="Email Address">
+                                            <input type="email" name="email" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('email') is-invalid @enderror" placeholder="Email Address" value="{{ old('email') }}">
+                                            @error('email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <select class="form-select bg-white bg-opacity-10 border-white border-opacity-20 text-white">
-                                                <option selected class="text-dark">Select Service Type</option>
-                                                <option value="Estimation" class="text-dark">Estimation Service</option>
-                                                <option value="Engineering" class="text-dark">Engineering Service</option>
+                                            <select name="service_type" class="form-select bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('service_type') is-invalid @enderror">
+                                                <option selected disabled class="text-dark">Select Service Type</option>
+                                                <option value="Estimation" class="text-dark" {{ old('service_type') == 'Estimation' ? 'selected' : '' }}>Estimation Service</option>
+                                                <option value="Engineering" class="text-dark" {{ old('service_type') == 'Engineering' ? 'selected' : '' }}>Engineering Service</option>
                                             </select>
+                                            @error('service_type')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="floor_design" class="form-label text-white">Floor Design File</label>
+                                            <input type="file" name="floor_design" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('floor_design') is-invalid @enderror" accept=".pdf,.dwg,.dxf">
+                                            @error('floor_design')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-4">
-                                            <textarea class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white" rows="4" placeholder="Your Message"></textarea>
+                                            <textarea name="message" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('message') is-invalid @enderror" rows="4" placeholder="Your Message">{{ old('message') }}</textarea>
+                                            @error('message')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
                                     </form>
@@ -728,10 +773,9 @@
                         <h3 class="h4 mb-4">Quick Links</h3>
                         <ul class="list-unstyled">
                             <li class="mb-2"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="mb-2"><a class="nav-link" href="#services">Services</a></li>
                             <li class="mb-2"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                            <li class="mb-2"><a class="nav-link" href="#Estimates">Sample Estimates</a></li>
-                            <li class="mb-2"><a class="nav-link" href="#Privacy">Privacy Policy</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#services">Services</a></li>
+                            <li class="mb-2"><a class="nav-link" href="#about-us">About Us</a></li>
                             <li class="mb-2"><a class="nav-link" href="#contact">Contact</a></li>
                         </ul>
                     </div>
@@ -760,6 +804,17 @@
             } else {
                 topNav.classList.remove('hidden');
             }
+        });
+
+        // Auto dismiss alerts after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                setTimeout(function() {
+                    var bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                }, 10000);
+            });
         });
     </script>
     </html>
