@@ -579,7 +579,7 @@
                     <div class="col-lg-4">
                         <div class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20">
                             <h3 class="mb-4 text-white">Our Mission</h3>
-                            <p class="text-white opacity-90">At International Estimating, our mission is to provide accurate and reliable cost estimates that help our clients achieve their project goals. We strive to deliver exceptional service and build long-lasting relationships based on trust and integrity.</p>
+                            <p class="text-white opacity-90">At Building Estimation Electrical, our mission is to provide accurate and reliable cost estimates that help our clients achieve their project goals. We strive to deliver exceptional service and build long-lasting relationships based on trust and integrity.</p>
                         </div>
                     </div>
 
