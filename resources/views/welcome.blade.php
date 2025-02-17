@@ -855,7 +855,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-4">
                         <h3 class="h4 mb-4">Building Estimation Electrical</h3>
-                        <p class="text-white-50">A registered cost estimating company based in New York, we have been dedicated to delivering exceptional customer service and providing accurate cost solutions for over 20 years. Our commitment to excellence has earned us a reputation for reliability and expertise.</p>
+                        <p class="text-white-50">A leading cost estimating firm based in Florida, we have been providing expert services since 2018. With a wealth of experience, we specialize in delivering accurate cost assessments and outstanding customer service. Our focus on offering customized, cost-effective solutions to meet each client's distinct needs has earned us a reputation as a reliable and trusted industry partner.</p>
                     </div>
                     <div class="col-lg-2">
                         <h3 class="h4 mb-4">Quick Links</h3>
