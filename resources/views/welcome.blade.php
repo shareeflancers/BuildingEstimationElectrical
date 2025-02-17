@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Building Estimation Electrical</title>
+        <link rel="icon" type="favicon" href="{{ asset('favicon.PNG') }}">
+         <link rel="manifest" href="{{ asset('favicon.PNG') }}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
@@ -273,9 +275,12 @@
             .hero-title {
             font-size: 3.5rem;
             }
-            
             .contact-form {
             padding: 2rem;
+            }
+            .top-contact {
+            gap: 0rem;
+            display: grid;
             }
             }
             @media (max-width: 768px) {
@@ -286,16 +291,82 @@
             padding: 1.5rem;
             }
             .top-contact {
-            gap: 1rem;
+            gap: 0rem;
+            display: grid;
             }
-            
-            .top-social {
-            display: none;
             }
+            .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            animation: floatAnimation 1.5s infinite alternate ease-in-out;
+            z-index: 1000;
+            }
+            .whatsapp-button:hover {
+            background-color: #1ebe5d;
+            transform: scale(1.1);
+            }
+            @keyframes floatAnimation {
+            0% {
+            transform: translateY(0);
+            }
+            100% {
+            transform: translateY(-10px);
+            }
+            }
+            .call-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease-in-out;
+            }
+            .call-link:hover {
+            color: #25D366; /* Change to green (or any color) on hover */
+            }
+            .email-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease-in-out;
+            }
+            .email-link:hover {
+            color: #25D366; /* Change to blue (or any color) on hover */
+            }
+            .map-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease-in-out;
+            }
+            .map-link:hover {
+            color: #25D366; /* Change to orange (or any color) on hover */
+            }
+            .project-image {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+            }
+            .project-image.show {
+            max-height: 500px; /* Adjust based on your needs */
             }
         </style>
     </head>
     <body>
+        <!-- Whatapp Chat Link -->
+        <a href="https://wa.me/923470171002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20estimation%20services.%20Can%20you%20provide%20more%20details%3F" target="_blank" class="whatsapp-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="50" height="50" alt="WhatsApp">
+        </a>
+
         <!-- Error Showing -->
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -316,16 +387,26 @@
             <div class="top-nav">
                 <div class="container">
                     <div class="top-contact">
-                        <span><i class="bi bi-envelope me-2"></i>info@example.com</span>
-                        <span><i class="bi bi-telephone me-2"></i>(555) 123-4567</span>
-                        <span><i class="bi bi-geo-alt me-2"></i>123 Business St</span>
+                        <span>
+                            <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link"><i class="bi bi-envelope me-2"></i>
+                                faizan.a@buildingestimationelectrical.com
+                            </a>
+                        </span>
+                        <span>
+                            <a href="tel:+19796080010" class="call-link"><i class="bi bi-telephone-fill me-2"></i>+1 (979) 608-0010</a>
+                        </span>
+                        <span>
+                            <a href="https://www.google.com/maps/search/?q=70+N+Wall+St,+Panama+City+Beach,+Florida+32413" target="_blank" class="map-link">
+                                <i class="bi bi-geo-alt me-2"></i>70 N Wall St, Panama City Beach, Florida (FL), 32413
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
 
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Building Estimation</a>
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" width="75" height="75">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -349,7 +430,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 text-center text-lg-start">
                         <h1 class="hero-title animate-fade-up">Estimating Services</h1>
-                        <p class="lead text-white-50 mb-5 animate-fade-up">Premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry.</p>
+                        <p class="lead text-white-50 mb-5 animate-fade-up">A leading cost estimating firm based in Florida, we have been providing expert services since 2018. With a wealth of experience, we specialize in delivering accurate cost assessments and outstanding customer service. Our focus on offering customized, cost-effective solutions to meet each client's distinct needs has earned us a reputation as a reliable and trusted industry partner.</p>
                         <div class="animate-fade-up">
                             <a href="#contact" class="btn btn-primary me-3">Request a Quote</a>
                             <a href="#services" class="btn btn-outline-light">Range of Services</a>
@@ -400,16 +481,19 @@
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
                                     <span class="badge bg-primary me-2">Commercial</span>
-                                    <span class="text-muted">New York, NY</span>
+                                    <span class="text-muted">BLOOMINGDALE, IL</span>
                                 </div>
-                                <h4 class="card-title">Office Complex Estimation</h4>
-                                <p class="card-text">Complete electrical estimation for a 20-story office building including power distribution, lighting, and emergency systems.</p>
+                                <h4 class="card-title">DAISO - Store Remodel</h4>
+                                <p class="card-text">The existing retail establishment is undergoing remodeling for a new tenant, including the installation of updated equipment, fixtures, and finishes. Fire protection and sprinkler system updates, as well as fire alarm updates.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $2.5M</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 3 months</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 200,000 sq ft</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Price For Estimate: $800</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 22,012 sq ft</li>
                                 </ul>
-                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                                <button class="btn btn-outline-primary" onclick="toggleImage('BLOOMINGDALE-image')">View Image</button>
+                                <!-- Image container -->
+                                <div id="BLOOMINGDALE-image" class="project-image mt-3" style="display: none;">
+                                    <img src="{{ asset('images/Portfolio1.png') }}" alt="The Windard Phase 2" class="img-fluid rounded">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -420,16 +504,19 @@
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
                                     <span class="badge bg-primary me-2">Residential</span>
-                                    <span class="text-muted">Brooklyn, NY</span>
+                                    <span class="text-muted">Stratford, CT</span>
                                 </div>
-                                <h4 class="card-title">Luxury Apartment Complex</h4>
-                                <p class="card-text">Detailed estimation for a luxury residential complex including smart home systems and renewable energy integration.</p>
+                                <h4 class="card-title">100-Unit Multi-Family Building</h4>
+                                <p class="card-text">The project at 225 Lordship Blvd, Stratford, CT, involves the development of a 100-unit multi-family building with electrical system installation and low voltage infrastructure, including data, communication, and security systems.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $1.8M</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 2 months</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 150,000 sq ft</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Price For Estimate: $1500</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 92,712 sq ft</li>
                                 </ul>
-                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                                <button class="btn btn-outline-primary" onclick="toggleImage('Stratford-image')">View Image</button>
+                                <!-- Image container -->
+                                <div id="Stratford-image" class="project-image mt-3" style="display: none;">
+                                    <img src="{{ asset('images/Portfolio2.png') }}" alt="The Windard Phase 2" class="img-fluid rounded">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -439,17 +526,20 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
-                                    <span class="badge bg-primary me-2">Industrial</span>
-                                    <span class="text-muted">Queens, NY</span>
+                                    <span class="badge bg-primary me-2">Residential</span>
+                                    <span class="text-muted">Bridgeport, CT</span>
                                 </div>
-                                <h4 class="card-title">Manufacturing Facility</h4>
-                                <p class="card-text">Comprehensive electrical estimation for a manufacturing facility including heavy machinery power requirements and automation systems.</p>
+                                <h4 class="card-title">The Windard - Phase 2</h4>
+                                <p class="card-text">The Windard - Phase 2 project on Johnson Street, Bridgeport, CT, involves electrical system installation and low voltage infrastructure, including data, communication, and security systems for the next phase of development.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Project Value: $3.2M</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duration: 4 months</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 300,000 sq ft</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Price For Estimate: $1200</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Area: 62,092 sq ft</li>
                                 </ul>
-                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                                <button class="btn btn-outline-primary" onclick="toggleImage('windard-image')">View Image</button>
+                                <!-- Image container -->
+                                <div id="windard-image" class="project-image mt-3" style="display: none;">
+                                    <img src="{{ asset('images/Portfolio3.png') }}" alt="The Windard Phase 2" class="img-fluid rounded">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -481,7 +571,7 @@
                     <div class="col-lg-4">
                         <div class="p-4 h-100 bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20">
                             <h3 class="mb-4 text-white">Who We Are</h3>
-                            <p class="text-white opacity-90">International Estimating is a premier cost estimating firm proudly headquartered in New York. With over 20 years of unparalleled expertise, we excel in delivering precise cost assessments and exceptional customer service. Our commitment to solving clients' unique challenges with tailored, cost-effective solutions has solidified our reputation as a trusted partner in the industry.</p>
+                            <p class="text-white opacity-90">A leading cost estimating firm based in Florida, we have been providing expert services since 2018. With a wealth of experience, we specialize in delivering accurate cost assessments and outstanding customer service. Our focus on offering customized, cost-effective solutions to meet each client's distinct needs has earned us a reputation as a reliable and trusted industry partner.</p>
                         </div>
                     </div>
 
@@ -499,7 +589,7 @@
                             <h3 class="mb-4 text-white">Why Choose Us?</h3>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-3 text-white opacity-90">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Over 20 years of industry experience
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>Over 6 years of industry experience
                                 </li>
                                 <li class="mb-3 text-white opacity-90">
                                     <i class="bi bi-check-circle-fill text-primary me-2"></i>Commitment to exceptional customer service
@@ -674,25 +764,29 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col">
                         <div class="bg-white bg-opacity-10 rounded-3 backdrop-blur-sm border border-white border-opacity-20 p-4 p-md-5">
                             <div class="row g-4">
                                 <!-- Contact Info -->
-                                <div class="col-md-5">
+                                <div class="col-lg-6">
                                     <div class="mb-4">
                                         <h4 class="text-white mb-3">Contact Information</h4>
                                         <ul class="list-unstyled text-white opacity-90">
                                             <li class="mb-3">
-                                                <i class="bi bi-geo-alt-fill me-2"></i>
-                                                New York, NY 10001
+                                                <a href="https://www.google.com/maps/search/?q=70+N+Wall+St,+Panama+City+Beach,+Florida+32413" target="_blank" class="map-link">
+                                                    <i class="bi bi-geo-alt me-2"></i>70 N Wall St, Panama City Beach, Florida (FL), 32413
+                                                </a>
                                             </li>
                                             <li class="mb-3">
-                                                <i class="bi bi-telephone-fill me-2"></i>
-                                                (555) 123-4567
+                                                <a href="tel:+19796080010" class="call-link">
+                                                    <i class="bi bi-telephone-fill me-2"></i>
+                                                    +1 (979) 608-0010
+                                                </a>
                                             </li>
                                             <li class="mb-3">
-                                                <i class="bi bi-envelope-fill me-2"></i>
-                                                info@example.com
+                                                <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link">
+                                                <i class="bi bi-envelope me-2"></i>faizan.a@buildingestimationelectrical.com
+                                            </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -700,14 +794,14 @@
                                     <div>
                                         <h4 class="text-white mb-3">Business Hours</h4>
                                         <ul class="list-unstyled text-white opacity-90">
-                                            <li class="mb-2">Monday - Friday: 9am - 5pm</li>
+                                            <li class="mb-2">Monday - Friday: 9am - 5pm EST</li>
                                             <li>Saturday - Sunday: Closed</li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <!-- Contact Form -->
-                                <div class="col-md-7">
+                                <div class="col-lg-6">
                                     <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
@@ -762,14 +856,8 @@
                     <div class="col-lg-4">
                         <h3 class="h4 mb-4">Building Estimation Electrical</h3>
                         <p class="text-white-50">A registered cost estimating company based in New York, we have been dedicated to delivering exceptional customer service and providing accurate cost solutions for over 20 years. Our commitment to excellence has earned us a reputation for reliability and expertise.</p>
-                        <div class="mt-4">
-                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
                         <h3 class="h4 mb-4">Quick Links</h3>
                         <ul class="list-unstyled">
                             <li class="mb-2"><a class="nav-link" href="#home">Home</a></li>
@@ -779,17 +867,29 @@
                             <li class="mb-2"><a class="nav-link" href="#contact">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <h3 class="h4 mb-4">Contact Info</h3>
                         <ul class="list-unstyled text-white-50">
-                            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@beelectrical.com</li>
-                            <li class="mb-2"><i class="bi bi-telephone me-2"></i>(555) 123-4567</li>
-                            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>123 Business St, Suite 100</li>
+                            <li class="mb-2">
+                                <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link">
+                                    <i class="bi bi-envelope me-2"></i>faizan.a@buildingestimationelectrical.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+19796080010" class="call-link">
+                                <i class="bi bi-telephone-fill me-2"></i>+1 (979) 608-0010
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="https://www.google.com/maps/search/?q=70+N+Wall+St,+Panama+City+Beach,+Florida+32413" target="_blank" class="map-link">
+                                    <i class="bi bi-geo-alt me-2"></i>70 N Wall St, Panama City Beach, Florida (FL), 32413
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="border-top border-secondary mt-5 pt-4 text-center">
-                    <p class="mb-0 text-white-50">&copy; 2025 BE Electrical. All rights reserved.</p>
+                    <p class="mb-0 text-white-50">&copy; 2025 Building Estimation Electrical. All rights reserved.</p>
                 </div>
             </div>
         </footer>
@@ -816,5 +916,26 @@
                 }, 10000);
             });
         });
+
+        function toggleImage(imageId) {
+            const imageContainer = document.getElementById(imageId);
+            const button = event.currentTarget;
+            
+            if (imageContainer.style.display === 'none') {
+                imageContainer.style.display = 'block';
+                button.textContent = 'Hide Image';
+                // Add a small delay before adding the show class for the animation
+                setTimeout(() => {
+                    imageContainer.classList.add('show');
+                }, 10);
+            } else {
+                imageContainer.classList.remove('show');
+                button.textContent = 'View Image';
+                // Wait for animation to complete before hiding
+                setTimeout(() => {
+                    imageContainer.style.display = 'none';
+                }, 300);
+            }
+        }
     </script>
     </html>
