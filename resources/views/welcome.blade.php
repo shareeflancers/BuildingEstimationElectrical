@@ -55,7 +55,7 @@
             color: var(--secondary-color) !important;
             }
             .hero-section {
-            min-height: 85vh;
+            min-height: 88.5vh;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(59, 130, 246, 0.8));
             display: flex;
             align-items: center;
