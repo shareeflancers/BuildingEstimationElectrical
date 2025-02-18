@@ -79,10 +79,6 @@
             <div class="label">Client Message:</div>
             <div class="value message-box">{{ $contactData['message'] }}</div>
         </div>
-        
-        <div class="attachment-note">
-            📎 Floor design file is attached to this email for review.
-        </div>
     </div>
     
     <div class="footer">

@@ -20,8 +20,15 @@ class ContactFormMail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.contact-form')
-        ->subject('New Project Inquiry - ' . $this->contactData['service_type'])
-        ->attach(Storage::disk('public')->path($this->contactData['floor_design']));
+        $mail = $this->view('emails.contact-form')
+        ->subject('New Project Inquiry' . 
+            (isset($this->contactData['service_type']) ? ' - ' . $this->contactData['service_type'] : ''));
+
+        // Only attach file if floor_design exists in contact data
+        if (isset($this->contactData['floor_design'])) {
+            $mail->attach(Storage::disk('public')->path($this->contactData['floor_design']));
+        }
+
+        return $mail;
     }
 }

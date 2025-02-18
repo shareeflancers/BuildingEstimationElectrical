@@ -802,16 +802,16 @@
 
                                 <!-- Contact Form -->
                                 <div class="col-lg-6">
-                                    <form action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
+                                    <form id="contactForm" action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
-                                            <input type="text" name="name" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('name') is-invalid @enderror" placeholder="Your Name" value="{{ old('name') }}">
+                                            <input type="text" name="name" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('name') is-invalid @enderror" placeholder="Your Name" value="{{ old('name') }}" required>
                                             @error('name')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <input type="email" name="email" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('email') is-invalid @enderror" placeholder="Email Address" value="{{ old('email') }}">
+                                            <input type="email" name="email" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('email') is-invalid @enderror" placeholder="Email Address" value="{{ old('email') }}" required>
                                             @error('email')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -834,7 +834,7 @@
                                             @enderror
                                         </div>
                                         <div class="mb-4">
-                                            <textarea name="message" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('message') is-invalid @enderror" rows="4" placeholder="Your Message">{{ old('message') }}</textarea>
+                                            <textarea name="message" class="form-control bg-white bg-opacity-10 border-white border-opacity-20 text-white @error('message') is-invalid @enderror" rows="4" placeholder="Your Message" required>{{ old('message') }}</textarea>
                                             @error('message')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -937,5 +937,18 @@
                 }, 300);
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there are any validation errors
+            const invalidInputs = document.querySelectorAll('.is-invalid');
+            if (invalidInputs.length > 0) {
+                // Scroll to the form
+                const contactForm = document.getElementById('contactForm');
+                contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Focus on the first invalid input
+                invalidInputs[0].focus();
+            }
+        });
     </script>
     </html>
