@@ -388,8 +388,8 @@
                 <div class="container">
                     <div class="top-contact">
                         <span>
-                            <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link"><i class="bi bi-envelope me-2"></i>
-                                faizan.a@buildingestimationelectrical.com
+                            <a href="mailto:info@buildingestimationelectrical.com" class="email-link"><i class="bi bi-envelope me-2"></i>
+                                info@buildingestimationelectrical.com
                             </a>
                         </span>
                         <span>
@@ -423,7 +423,6 @@
                 </div>
             </nav>
         </div>
-        
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="container">
@@ -439,7 +438,6 @@
                 </div>  
             </div>
         </section>
-        
         <!-- Logo Stack -->
         <div class="logo-strip">
             <div class="logo-marquee-container">
@@ -461,7 +459,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Portfolio -->
         <section id="portfolio" class="py-5">
             <div class="container">
@@ -553,7 +550,6 @@
                 </div> -->
             </div>
         </section>
-
         <!-- About-us -->
         <section id="about-us" class="hero-section">
             <div class="container py-5">
@@ -609,7 +605,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Services -->
         <section id="services" clas s="py-5">
             <div class="container py-5">
@@ -752,7 +747,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Contact Us -->
         <section id="contact" class="hero-section">
             <div class="container py-5">
@@ -784,8 +778,8 @@
                                                 </a>
                                             </li>
                                             <li class="mb-3">
-                                                <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link">
-                                                <i class="bi bi-envelope me-2"></i>faizan.a@buildingestimationelectrical.com
+                                                <a href="mailto:info@buildingestimationelectrical.com" class="email-link">
+                                                <i class="bi bi-envelope me-2"></i>info@buildingestimationelectrical.com
                                             </a>
                                             </li>
                                         </ul>
@@ -799,7 +793,6 @@
                                         </ul>
                                     </div>
                                 </div>
-
                                 <!-- Contact Form -->
                                 <div class="col-lg-6">
                                     <form id="contactForm" action="{{ route('contact.submit') }}" method="POST" enctype="multipart/form-data">
@@ -848,7 +841,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
@@ -871,8 +863,8 @@
                         <h3 class="h4 mb-4">Contact Info</h3>
                         <ul class="list-unstyled text-white-50">
                             <li class="mb-2">
-                                <a href="mailto:faizan.a@buildingestimationelectrical.com" class="email-link">
-                                    <i class="bi bi-envelope me-2"></i>faizan.a@buildingestimationelectrical.com
+                                <a href="mailto:info@buildingestimationelectrical.com" class="email-link">
+                                    <i class="bi bi-envelope me-2"></i>info@buildingestimationelectrical.com
                                 </a>
                             </li>
                             <li class="mb-2">

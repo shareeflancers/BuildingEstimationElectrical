@@ -40,7 +40,7 @@ class ContactController extends Controller
     }
 
     // Send email
-    Mail::to('Buildingestimation.electrical@gmail.com')->send(new ContactFormMail($emailData));
+    Mail::to('info@buildingestimationelectrical.com')->send(new ContactFormMail($emailData));
 
     return redirect()->back()->with('success', 'Thank you for your message. We will get back to you soon!');
   }
