@@ -621,7 +621,7 @@
                                 <i class="bi bi-building-fill-gear fs-3"></i>
                             </div>
                             <h3 class="h4 mb-3">MEP Estimating</h3>
-                            <p class="text-muted mb-0">Contractors are always looking for MEP estimating services. US Bid Estimating & Engineering provides affordable, accurate and cost-effective cost</p>
+                            <p class="text-muted mb-0">Contractors are always looking for MEP estimating services. Building Estimation Electrical provides affordable, accurate and cost-effective cost</p>
                             <a href="#contact" class="btn btn-outline-dark mt-4">Request Service</a>
                         </div>
                     </div>
@@ -681,7 +681,7 @@
                                 <i class="bi bi-fire fs-3"></i>
                             </div>
                             <h3 class="h4 mb-3">Fire Suppression System</h3>
-                            <p class="text-muted mb-0">US Bid Estimating & Engineering provides accurate take-offs and estimation services. We have experienced estimators with hands-on field experience and estimation</p>
+                            <p class="text-muted mb-0">Building Estimation Electrical provides accurate take-offs and estimation services. We have experienced estimators with hands-on field experience and estimation</p>
                             <a href="#contact" class="btn btn-outline-dark mt-4">Request Service</a>
                         </div>
                     </div>
